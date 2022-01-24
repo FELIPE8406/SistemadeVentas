@@ -46,15 +46,5 @@ namespace SistemaVentas
         {
 
         }
-
-        private void txtUsuario_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtClave_TextChanged(object sender, EventArgs e)
-        {
-
-        }
     }
 }

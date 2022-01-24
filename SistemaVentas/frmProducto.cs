@@ -53,7 +53,7 @@ namespace SistemaVentas
 
                 foreach (Producto row in oListaProducto)
                 {
-                    tablaRol.Rows.Add(row.IdProducto, row.Codigo, row.ValorCodigo, row.Nombre, row.Descripcion, row.IdCategoria, row.Activo, row.oCategoria.Descripcion, row.Activo == true ? "Activo" : "No Activo");
+                    tablaRol.Rows.Add(row.IdProducto, row.Codigo, row.ValorCodigo, row.Nombre, row.Descripcion, row.IdCategoria, row.Activo, row.OCategoria.Descripcion, row.Activo == true ? "Activo" : "No Activo");
                 }
 
                 dgvProducto.DataSource = tablaRol;

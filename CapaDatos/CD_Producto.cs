@@ -31,7 +31,7 @@ namespace CapaDatos
                             Nombre = dr["Nombre"].ToString(),
                             Descripcion = dr["DescripcionProducto"].ToString(),
                             IdCategoria = Convert.ToInt32(dr["IdCategoria"].ToString()),
-                            oCategoria = new Categoria() { Descripcion = dr["DescripcionCategoria"].ToString() },
+                            OCategoria = new Categoria() { Descripcion = dr["DescripcionCategoria"].ToString() },
                             Activo = Convert.ToBoolean(dr["Activo"].ToString())
                         });
                     }

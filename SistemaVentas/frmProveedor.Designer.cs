@@ -40,6 +40,7 @@
             this.cboFiltro = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.BtnReporte = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProveedor)).BeginInit();
             this.SuspendLayout();
             // 
@@ -93,7 +94,6 @@
             this.dgvProveedor.Name = "dgvProveedor";
             this.dgvProveedor.Size = new System.Drawing.Size(623, 150);
             this.dgvProveedor.TabIndex = 4;
-            this.dgvProveedor.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvProveedor_CellContentClick);
             // 
             // lblTotalRegistros
             // 
@@ -130,7 +130,6 @@
             this.cboFiltro.Name = "cboFiltro";
             this.cboFiltro.Size = new System.Drawing.Size(121, 21);
             this.cboFiltro.TabIndex = 18;
-            this.cboFiltro.SelectedIndexChanged += new System.EventHandler(this.cboFiltro_SelectedIndexChanged);
             // 
             // label3
             // 
@@ -150,12 +149,23 @@
             this.label2.TabIndex = 16;
             this.label2.Text = "Lista de Proveedor";
             // 
+            // BtnReporte
+            // 
+            this.BtnReporte.Location = new System.Drawing.Point(334, 14);
+            this.BtnReporte.Name = "BtnReporte";
+            this.BtnReporte.Size = new System.Drawing.Size(75, 23);
+            this.BtnReporte.TabIndex = 4;
+            this.BtnReporte.Text = "Reporte";
+            this.BtnReporte.UseVisualStyleBackColor = true;
+            this.BtnReporte.Click += new System.EventHandler(this.BtnReporte_Click);
+            // 
             // frmProveedor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(650, 282);
+            this.Controls.Add(this.BtnReporte);
             this.Controls.Add(this.lblTotalRegistros);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.txtFilter);
@@ -192,5 +202,6 @@
         private System.Windows.Forms.ComboBox cboFiltro;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button BtnReporte;
     }
 }

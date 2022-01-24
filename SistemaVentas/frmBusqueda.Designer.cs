@@ -41,7 +41,6 @@
             // 
             // dgvLista
             // 
-            this.dgvLista.BackgroundColor = System.Drawing.Color.LightCyan;
             this.dgvLista.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvLista.Cursor = System.Windows.Forms.Cursors.Hand;
             this.dgvLista.Location = new System.Drawing.Point(18, 62);
@@ -70,7 +69,6 @@
             // 
             // txtFilter
             // 
-            this.txtFilter.BackColor = System.Drawing.SystemColors.ScrollBar;
             this.txtFilter.Location = new System.Drawing.Point(426, 22);
             this.txtFilter.Name = "txtFilter";
             this.txtFilter.Size = new System.Drawing.Size(134, 20);
@@ -86,7 +84,6 @@
             this.cboFiltro.Name = "cboFiltro";
             this.cboFiltro.Size = new System.Drawing.Size(121, 21);
             this.cboFiltro.TabIndex = 35;
-            this.cboFiltro.SelectedIndexChanged += new System.EventHandler(this.CboFiltro_SelectedIndexChanged);
             // 
             // label3
             // 
@@ -106,7 +103,7 @@
             this.lblDescripcionLista.TabIndex = 33;
             this.lblDescripcionLista.Text = "Lista de X";
             // 
-            // FrmBusqueda
+            // frmBusqueda
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -119,7 +116,7 @@
             this.Controls.Add(this.lblDescripcionLista);
             this.Controls.Add(this.dgvLista);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "FrmBusqueda";
+            this.Name = "frmBusqueda";
             this.Text = "Busqueda";
             this.Load += new System.EventHandler(this.FrmBusqueda_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvLista)).EndInit();

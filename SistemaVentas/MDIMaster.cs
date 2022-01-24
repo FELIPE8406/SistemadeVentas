@@ -30,7 +30,7 @@ namespace SistemaVentas
         {
             if (IdUsuario == 0)
             {
-                this.Close();
+                Close();
             }
 
             Configuracion.oUsuario = CD_Usuario.ObtenerDetalleUsuario(IdUsuario);
@@ -41,25 +41,23 @@ namespace SistemaVentas
             //string pathImage= Path.GetFullPath(Path.Combine(Application.StartupPath, @"../../") + @"\Iconos\print.png");
             //Image image1 = Image.FromFile(pathImage);
 
-            StatusStrip sttStrip = new StatusStrip
-            {
-                Dock = DockStyle.Top,
-                Font = new System.Drawing.Font("Segoe UI", 12F)
-            };
+            StatusStrip sttStrip = new StatusStrip();
+            sttStrip.Dock = DockStyle.Top;
+            sttStrip.Font = new Font("Segoe UI", 12F);
 
             ToolStripStatusLabel tslblUsuario = new ToolStripStatusLabel("Usuario: ");
             ToolStripStatusLabel tslblData1 = new ToolStripStatusLabel(Configuracion.oUsuario.Nombres + " " + Configuracion.oUsuario.Apellidos);
-            tslblUsuario.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            tslblUsuario.Font = new Font("Segoe UI", 11F, FontStyle.Bold, GraphicsUnit.Point, 0);
             tslblUsuario.Spring = true;
             tslblUsuario.TextAlign = ContentAlignment.MiddleRight;
 
             ToolStripStatusLabel tslblTipoUsuario = new ToolStripStatusLabel("Rol: ");
             ToolStripStatusLabel tslblData2 = new ToolStripStatusLabel(Configuracion.oUsuario.oRol.Descripcion);
-            tslblTipoUsuario.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            tslblTipoUsuario.Font = new Font("Segoe UI", 11F, FontStyle.Bold, GraphicsUnit.Point, 0);
 
             ToolStripStatusLabel tslblTienda = new ToolStripStatusLabel("Tienda: ");
             ToolStripStatusLabel tslblData3 = new ToolStripStatusLabel(Configuracion.oUsuario.oTienda.Nombre);
-            tslblTienda.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            tslblTienda.Font = new Font("Segoe UI", 11F, FontStyle.Bold, GraphicsUnit.Point, 0);
 
 
 
@@ -78,7 +76,7 @@ namespace SistemaVentas
             foreach (CapaModelo.Menu oMenu in Configuracion.oUsuario.oListaMenu)
             {
                 ToolStripMenuItem MnuStripItem = new ToolStripMenuItem(oMenu.Nombre);
-                MnuStripItem.Font = new System.Drawing.Font("Segoe UI", 11F, FontStyle.Bold);
+                MnuStripItem.Font = new Font("Segoe UI", 11F, FontStyle.Bold);
                 string pathImage1 = Path.GetFullPath(Path.Combine(Application.StartupPath, @"../../") + @"\Iconos\" + oMenu.Icono);
                 MnuStripItem.Image = new Bitmap(pathImage1);
 
@@ -87,7 +85,7 @@ namespace SistemaVentas
                     foreach (SubMenu oSubMenu in oMenu.oSubMenu.Where(x => x.Activo == true))
                     {
                         ToolStripMenuItem SubMenuStringItem = new ToolStripMenuItem(oSubMenu.Nombre, null, ToolStripMenuItem_Click, oSubMenu.NombreFormulario);
-                        SubMenuStringItem.Font = new System.Drawing.Font("Segoe UI", 12F);
+                        SubMenuStringItem.Font = new Font("Segoe UI", 12F);
                         string pathImage2 = Path.GetFullPath(Path.Combine(Application.StartupPath, @"../../") + @"\Iconos\icon_item.png");
                         SubMenuStringItem.Image = new Bitmap(pathImage2);
                         MnuStripItem.DropDownItems.Add(SubMenuStringItem);
@@ -96,13 +94,15 @@ namespace SistemaVentas
                 MnuStrip.Items.Add(MnuStripItem);
             }
 
-            ToolStripMenuItem MnuStripItemExit = new ToolStripMenuItem("Salir", null, ToolStripMenuItemSalir_Click, "");
-            MnuStripItemExit.Font = new System.Drawing.Font("Segoe UI", 11F, FontStyle.Bold);
+            ToolStripMenuItem MnuStripItemExit = new ToolStripMenuItem("Salir", null, ToolStripMenuItemSalir_Click, "")
+            {
+                Font = new Font("Segoe UI", 11F, FontStyle.Bold)
+            };
             string pathImage3 = Path.GetFullPath(Path.Combine(Application.StartupPath, @"../../") + @"\Iconos\icon_exit.png");
             MnuStripItemExit.Image = new Bitmap(pathImage3);
             MnuStrip.Items.Add(MnuStripItemExit);
 
-            this.MainMenuStrip = MnuStrip;
+            MainMenuStrip = MnuStrip;
             Controls.Add(MnuStrip);
 
         }
@@ -132,7 +132,7 @@ namespace SistemaVentas
             return destImage;
         }
 
-        private void ToolStripMenuItemSalir_Click(object sender, System.EventArgs e)
+        private void ToolStripMenuItemSalir_Click(object sender, EventArgs e)
         {
             if (MessageBox.Show("¿Desea cerrar sesión?", "Mensaje", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
@@ -141,7 +141,7 @@ namespace SistemaVentas
             }
         }
 
-        private void ToolStripMenuItem_Click(object sender, System.EventArgs e)
+        private void ToolStripMenuItem_Click(object sender, EventArgs e)
         {
             ToolStripMenuItem oMenuSelect = (ToolStripMenuItem)sender;
 

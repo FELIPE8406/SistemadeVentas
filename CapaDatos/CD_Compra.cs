@@ -83,7 +83,7 @@ namespace CapaDatos
                                                                         select new DetalleCompra()
                                                                         {
                                                                             Cantidad = int.Parse(producto.Element("Cantidad").Value),
-                                                                            oProducto = new Producto() { Nombre = producto.Element("NombreProducto").Value },
+                                                                            OProducto = new Producto() { Nombre = producto.Element("NombreProducto").Value },
                                                                             PrecioUnitarioCompra = float.Parse(producto.Element("PrecioUnitarioCompra").Value),
                                                                             TotalCosto = float.Parse(producto.Element("TotalCosto").Value)
                                                                         }).ToList();

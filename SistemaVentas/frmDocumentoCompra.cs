@@ -52,7 +52,7 @@ namespace SistemaVentas
                 foreach (DetalleCompra r in oCompra.oListaDetalleCompra)
                 {
                     filasproductos += string.Format("<tr><td><center>{0}</center></td><td><center>{1}</center></td><td><center>{2}</center></td><td><center>{3}<center></td></tr>",
-                        r.Cantidad, r.oProducto.Nombre, r.PrecioUnitarioCompra, r.TotalCosto);
+                        r.Cantidad, r.OProducto.Nombre, r.PrecioUnitarioCompra, r.TotalCosto);
                 }
                 PlantillaEditar = PlantillaEditar.Replace("!filasproductos¡", filasproductos);
 

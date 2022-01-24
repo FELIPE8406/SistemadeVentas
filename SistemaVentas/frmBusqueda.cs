@@ -94,7 +94,7 @@ namespace SistemaVentas
 
                 foreach (Producto row in oListaProducto)
                 {
-                    tabla.Rows.Add(row.IdProducto, row.Codigo, row.Nombre, row.Descripcion, row.oCategoria.Descripcion);
+                    tabla.Rows.Add(row.IdProducto, row.Codigo, row.Nombre, row.Descripcion, row.OCategoria.Descripcion);
                 }
                 dgvLista.DataSource = tabla;
                 dgvLista.Columns["IdProducto"].Visible = false;
@@ -123,7 +123,7 @@ namespace SistemaVentas
                 cboFiltro.Items.Clear();
 
                 tabla.Columns.Add("IdTienda", typeof(int));
-                tabla.Columns.Add("NIT", typeof(string));
+                tabla.Columns.Add("RUC", typeof(string));
                 tabla.Columns.Add("Razon Social", typeof(string));
                 tabla.Columns.Add("Direccion", typeof(string));
 
@@ -174,7 +174,7 @@ namespace SistemaVentas
                 cboFiltro.Items.Clear();
 
                 tabla.Columns.Add("IdProveedor", typeof(int));
-                tabla.Columns.Add("NIT", typeof(string));
+                tabla.Columns.Add("RUC", typeof(string));
                 tabla.Columns.Add("Razon Social", typeof(string));
                 tabla.Columns.Add("Telefono", typeof(string));
                 tabla.Columns.Add("Correo", typeof(string));
@@ -215,7 +215,7 @@ namespace SistemaVentas
 
         }
 
-        //*********************************** BUSQUEDA PRODUCTO TIENDA **********************************
+        //*********************************** BUSQUEDA PRoDUCTO TIENDA **********************************
         private void BusquedaProductoTienda()
         {
             lblDescripcionLista.Text = "Lista de productos por tienda";
@@ -317,7 +317,7 @@ namespace SistemaVentas
                     Tienda oTienda = new Tienda()
                     {
                         IdTienda = Convert.ToInt32(dgvLista.Rows[e.RowIndex].Cells["IdTienda"].Value.ToString()),
-                        NIT = dgvLista.Rows[e.RowIndex].Cells["NIT"].Value.ToString(),
+                        NIT = dgvLista.Rows[e.RowIndex].Cells["RUC"].Value.ToString(),
                         Nombre = dgvLista.Rows[e.RowIndex].Cells["Razon Social"].Value.ToString(),
                         Direccion = dgvLista.Rows[e.RowIndex].Cells["Direccion"].Value.ToString()
                     };
@@ -331,7 +331,7 @@ namespace SistemaVentas
                     Proveedor oProveedor = new Proveedor()
                     {
                         IdProveedor = Convert.ToInt32(dgvLista.Rows[e.RowIndex].Cells["IdProveedor"].Value.ToString()),
-                        Nit = dgvLista.Rows[e.RowIndex].Cells["NIT"].Value.ToString(),
+                        Nit = dgvLista.Rows[e.RowIndex].Cells["RUC"].Value.ToString(),
                         RazonSocial = dgvLista.Rows[e.RowIndex].Cells["Razon Social"].Value.ToString(),
                     };
                     frmRegistrarCompra.oObjecto = null;
@@ -358,11 +358,6 @@ namespace SistemaVentas
 
                 this.Close();
             }
-        }
-
-        private void CboFiltro_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
         }
     }
 }

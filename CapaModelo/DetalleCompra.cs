@@ -6,7 +6,7 @@ namespace CapaModelo
     {
         public int IdDetalleCompra { get; set; }
         public int IdCompra { get; set; }
-        public Producto oProducto { get; set; }
+        public Producto OProducto { get; set; }
         public int Cantidad { get; set; }
         public float PrecioUnitarioCompra { get; set; }
         public float PrecioUnitarioVenta { get; set; }

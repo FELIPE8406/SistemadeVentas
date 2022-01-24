@@ -8,7 +8,7 @@
         public string Nombre { get; set; }
         public string Descripcion { get; set; }
         public int IdCategoria { get; set; }
-        public Categoria oCategoria { get; set; }
+        public Categoria OCategoria { get; set; }
         public bool Activo { get; set; }
 
     }

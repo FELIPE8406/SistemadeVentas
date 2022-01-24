@@ -184,7 +184,6 @@
             this.txtIdTienda.TabIndex = 5;
             this.txtIdTienda.Text = "0";
             this.txtIdTienda.Visible = false;
-            this.txtIdTienda.TextChanged += new System.EventHandler(this.txtIdTienda_TextChanged);
             // 
             // btnBuscarTienda
             // 
@@ -206,7 +205,6 @@
             this.txtDireccionTienda.ReadOnly = true;
             this.txtDireccionTienda.Size = new System.Drawing.Size(208, 20);
             this.txtDireccionTienda.TabIndex = 3;
-            this.txtDireccionTienda.TextChanged += new System.EventHandler(this.txtDireccionTienda_TextChanged);
             // 
             // txtRazonSocial
             // 

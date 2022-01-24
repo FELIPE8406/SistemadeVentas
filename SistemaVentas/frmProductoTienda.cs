@@ -361,15 +361,5 @@ namespace SistemaVentas
             dgvProductoTienda.ClearSelection();
 
         }
-
-        private void txtIdTienda_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtDireccionTienda_TextChanged(object sender, EventArgs e)
-        {
-
-        }
     }
 }

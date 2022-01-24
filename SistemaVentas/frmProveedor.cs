@@ -39,7 +39,7 @@ namespace SistemaVentas
                 cboFiltro.Items.Clear();
 
                 tablaProveedor.Columns.Add("IdProveedor", typeof(int));
-                tablaProveedor.Columns.Add("NIT", typeof(string));
+                tablaProveedor.Columns.Add("RUC", typeof(string));
                 tablaProveedor.Columns.Add("RazonSocial", typeof(string));
                 tablaProveedor.Columns.Add("Telefono", typeof(string));
                 tablaProveedor.Columns.Add("Correo", typeof(string));
@@ -87,7 +87,7 @@ namespace SistemaVentas
                 Proveedor oProveedor = new Proveedor()
                 {
                     IdProveedor = Convert.ToInt32(dgvProveedor.Rows[index].Cells["IdProveedor"].Value),
-                    Nit = Convert.ToString(dgvProveedor.Rows[index].Cells["Nit"].Value),
+                    Nit = Convert.ToString(dgvProveedor.Rows[index].Cells["Ruc"].Value),
                     RazonSocial = dgvProveedor.Rows[index].Cells["RazonSocial"].Value.ToString(),
                     Telefono = dgvProveedor.Rows[index].Cells["Telefono"].Value.ToString(),
                     Correo = dgvProveedor.Rows[index].Cells["Correo"].Value.ToString(),
@@ -145,14 +145,12 @@ namespace SistemaVentas
             (dgvProveedor.DataSource as DataTable).DefaultView.RowFilter = string.Format(columnaFiltro + " like '%{0}%'", txtFilter.Text);
         }
 
-        private void cboFiltro_SelectedIndexChanged(object sender, EventArgs e)
+        private void BtnReporte_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void dgvProveedor_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
+            Reportes.frmInformeProveedores Reporte = new Reportes.frmInformeProveedores();
+            _= Reporte.ShowDialog();
+            
+                    
         }
     }
 }
